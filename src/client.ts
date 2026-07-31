@@ -18,9 +18,13 @@ export class ServiceNowClient {
 
   constructor(private config: ServiceNowConfig) {
     this.baseUrl = config.instance;
-    this.authHeader =
-      "Basic " +
-      Buffer.from(`${config.user}:${config.password}`).toString("base64");
+    // Prefer a broker-supplied OAuth bearer (Enterpret bring_token path); fall
+    // back to Basic auth from user/password. Mirrors the
+    // @enterpret/zendesk-mcp-server ZENDESK_OAUTH_BEARER pattern.
+    this.authHeader = config.oauthBearer
+      ? `Bearer ${config.oauthBearer}`
+      : "Basic " +
+        Buffer.from(`${config.user}:${config.password}`).toString("base64");
   }
 
   // ── Core HTTP methods ──────────────────────────────────────────
