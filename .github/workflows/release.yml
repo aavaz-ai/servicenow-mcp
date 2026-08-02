@@ -1,0 +1,60 @@
+name: Release
+
+# Publishes @enterpret/servicenow-mcp to npm via npm OIDC Trusted Publishing.
+#
+# No NPM_TOKEN is stored anywhere. Auth is the short-lived GitHub OIDC token
+# (id-token: write) that npm verifies against the package's Trusted Publisher
+# config on npmjs.com.
+#
+# ONE-TIME npm-side setup (an @enterpret npm-org admin, on npmjs.com):
+#   Package settings -> Publishing access -> Trusted Publisher (GitHub Actions):
+#     Organization/User: aavaz-ai
+#     Repository:        servicenow-mcp
+#     Workflow filename: release.yml
+#   (For a brand-new package, either pre-configure the trusted publisher for the
+#    package name, or do one bootstrap `npm publish`, then this workflow owns it.)
+#
+# To cut a release: bump "version" in package.json, merge to main, then publish a
+# GitHub Release whose tag matches (e.g. v0.1.0). npm rejects re-publishing an
+# existing version, so every release must bump the version first.
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  id-token: write # required for npm OIDC Trusted Publishing
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          # Deliberately no registry-url: OIDC Trusted Publishing needs no
+          # NPM_TOKEN, and writing an ~/.npmrc auth placeholder would break it.
+
+      - name: Upgrade npm to a version that supports OIDC Trusted Publishing
+        # Full Trusted Publishing (publish with only id-token: write, no token)
+        # needs npm >= 11.5.1. No-op if the bundled npm is already newer.
+        run: npm install -g npm@latest
+
+      - run: npm ci
+
+      - run: npm run build
+
+      - run: npm test
+
+      - run: npm publish
+        # Auth via npm OIDC Trusted Publishing (id-token: write above).
+        # publishConfig.access=public in package.json makes it a public scoped
+        # package. Provenance is attached automatically under Trusted Publishing.
