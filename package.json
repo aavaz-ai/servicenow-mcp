@@ -1,7 +1,7 @@
 {
-  "name": "@onlyflows/servicenow-mcp",
-  "version": "1.0.0",
-  "description": "The most comprehensive ServiceNow MCP server. 17 tools for full CRUD, CMDB graph traversal, background scripts, ATF testing, and more.",
+  "name": "@enterpret/servicenow-mcp",
+  "version": "0.1.0",
+  "description": "Enterpret's fork of onlyflowstech/servicenow-mcp. 17 tools over the ServiceNow Table API; adds a SERVICENOW_OAUTH_BEARER env mode so a broker-supplied (Nango) OAuth token is used for auth.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
@@ -12,6 +12,7 @@
     "start": "node dist/index.js",
     "dev": "tsc --watch",
     "prepare": "npm run build",
+    "prepublishOnly": "npm run build",
     "test": "vitest run",
     "test:watch": "vitest"
   },
@@ -29,13 +30,16 @@
   ],
   "author": "OnlyFlows <support@onlyflows.tech> (https://onlyflows.tech)",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/onlyflowstech/servicenow-mcp"
+    "url": "https://github.com/aavaz-ai/servicenow-mcp"
   },
-  "homepage": "https://github.com/onlyflowstech/servicenow-mcp#readme",
+  "homepage": "https://github.com/aavaz-ai/servicenow-mcp#readme",
   "bugs": {
-    "url": "https://github.com/onlyflowstech/servicenow-mcp/issues"
+    "url": "https://github.com/aavaz-ai/servicenow-mcp/issues"
   },
   "engines": {
     "node": ">=18.0.0"
