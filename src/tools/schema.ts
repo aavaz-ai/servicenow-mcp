@@ -5,6 +5,7 @@ import { ok, err, formatError } from "../utils.js";
 
 export const definition = {
   name: "get_table_schema",
+  title: "Get table schema",
   description:
     "Get the schema (field definitions) for a ServiceNow table. Returns field names, types, max lengths, mandatory flags, and reference targets.",
   inputSchema: {

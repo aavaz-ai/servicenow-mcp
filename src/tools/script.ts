@@ -5,6 +5,7 @@ import { ok, err } from "../utils.js";
 
 export const definition = {
   name: "run_background_script",
+  title: "Run background script",
   description:
     "Execute a background script on the ServiceNow instance. Runs server-side GlideRecord/GlideSystem JavaScript and returns output from gs.print() calls. Requires admin role. NOTE: This tool requires the optional Playwright dependency.",
   inputSchema: {

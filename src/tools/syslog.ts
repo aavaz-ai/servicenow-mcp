@@ -5,6 +5,7 @@ import { ok, err, formatError, truncate } from "../utils.js";
 
 export const definition = {
   name: "query_system_logs",
+  title: "Query system logs",
   description:
     "Query ServiceNow system logs (syslog table) with severity, source, and time-based filters. Results ordered newest first.",
   inputSchema: {

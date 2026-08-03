@@ -5,6 +5,7 @@ import { ok, err, formatError, buildTableParams } from "../utils.js";
 
 export const definition = {
   name: "natural_language_query",
+  title: "Natural language query",
   description:
     "Natural language interface for ServiceNow. Translates plain English into ServiceNow API calls. Supports queries, aggregates, schema lookups, creates, updates, and batch operations. Read operations execute immediately; write operations require execute=true.",
   inputSchema: {

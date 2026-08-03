@@ -5,6 +5,7 @@ import { ok, err, formatError } from "../utils.js";
 
 export const definition = {
   name: "get_instance_health",
+  title: "Instance health",
   description:
     "Check ServiceNow instance health: version, cluster nodes, stuck jobs, semaphores, and key stats (active incidents, P1s, changes, problems).",
   inputSchema: {

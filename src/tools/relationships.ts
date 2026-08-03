@@ -5,6 +5,7 @@ import { ok, err, formatError } from "../utils.js";
 
 export const definition = {
   name: "traverse_cmdb_relationships",
+  title: "Traverse CMDB relationships",
   description:
     "Traverse CMDB CI relationships (graph walk). Supports upstream, downstream, or both directions with configurable depth. Use for impact analysis and dependency mapping.",
   inputSchema: {

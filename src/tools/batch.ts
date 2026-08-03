@@ -5,6 +5,7 @@ import { ok, err, formatError } from "../utils.js";
 
 export const definition = {
   name: "batch_operation",
+  title: "Batch update or delete",
   description:
     "Bulk update or delete records matching a query. Runs in dry-run mode by default — set confirm to true to execute. Safety cap at 10,000 records.",
   inputSchema: {

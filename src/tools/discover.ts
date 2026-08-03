@@ -5,6 +5,7 @@ import { ok, err, formatError } from "../utils.js";
 
 export const definition = {
   name: "discover_tables",
+  title: "Discover tables",
   description:
     "Discover tables, applications, and plugins installed on the ServiceNow instance.",
   inputSchema: {

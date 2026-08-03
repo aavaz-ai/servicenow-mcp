@@ -5,6 +5,7 @@ import { ok, err, formatError } from "../utils.js";
 
 export const definition = {
   name: "run_atf_tests",
+  title: "Run ATF tests",
   description:
     "Automated Test Framework — list, run, and get results for ATF tests and test suites.",
   inputSchema: {
