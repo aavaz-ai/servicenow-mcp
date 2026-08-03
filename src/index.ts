@@ -3,7 +3,7 @@
 /**
  * @onlyflows/servicenow-mcp — The most comprehensive ServiceNow MCP server.
  *
- * 17 tools for full CRUD, CMDB graph traversal, background scripts,
+ * 16 tools for full CRUD, CMDB graph traversal, background scripts,
  * ATF testing, and more.
  *
  * Published by OnlyFlows (https://onlyflows.tech)
