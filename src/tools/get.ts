@@ -4,7 +4,7 @@ import { ServiceNowConfig } from "../config.js";
 import { ok, err, formatError } from "../utils.js";
 
 export const definition = {
-  name: "sn_get",
+  name: "get_record",
   description:
     "Get a single ServiceNow record by sys_id. Returns all fields or a specified subset.",
   inputSchema: {

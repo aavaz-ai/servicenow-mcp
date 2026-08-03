@@ -4,7 +4,7 @@ import { ServiceNowConfig } from "../config.js";
 import { ok, err, formatError } from "../utils.js";
 
 export const definition = {
-  name: "sn_update",
+  name: "update_record",
   description:
     "Update an existing ServiceNow record. Pass the sys_id and field values to change.",
   inputSchema: {

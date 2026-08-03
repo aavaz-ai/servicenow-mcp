@@ -4,7 +4,7 @@ import { ServiceNowConfig } from "../config.js";
 import { ok, err, formatError } from "../utils.js";
 
 export const definition = {
-  name: "sn_delete",
+  name: "delete_record",
   description:
     "Delete a ServiceNow record by sys_id. Requires the confirm flag set to true as a safety measure.",
   inputSchema: {

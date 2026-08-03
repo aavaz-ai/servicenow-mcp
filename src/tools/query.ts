@@ -4,7 +4,7 @@ import { ServiceNowConfig } from "../config.js";
 import { ok, err, formatError, buildTableParams } from "../utils.js";
 
 export const definition = {
-  name: "sn_query",
+  name: "query_records",
   description:
     "Query any ServiceNow table. Returns records matching the encoded query with support for field selection, pagination, sorting, and display values.",
   inputSchema: {

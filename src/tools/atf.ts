@@ -4,7 +4,7 @@ import { ServiceNowConfig } from "../config.js";
 import { ok, err, formatError } from "../utils.js";
 
 export const definition = {
-  name: "sn_atf",
+  name: "run_atf_tests",
   description:
     "Automated Test Framework — list, run, and get results for ATF tests and test suites.",
   inputSchema: {

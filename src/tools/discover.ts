@@ -4,7 +4,7 @@ import { ServiceNowConfig } from "../config.js";
 import { ok, err, formatError } from "../utils.js";
 
 export const definition = {
-  name: "sn_discover",
+  name: "discover_tables",
   description:
     "Discover tables, applications, and plugins installed on the ServiceNow instance.",
   inputSchema: {
