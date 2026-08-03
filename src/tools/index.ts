@@ -1,5 +1,5 @@
 /**
- * Tool registry — exports all 17 ServiceNow tools.
+ * Tool registry — exports all 16 ServiceNow tools.
  *
  * @module tools
  */
@@ -22,7 +22,6 @@ import * as syslog from "./syslog.js";
 import * as codesearch from "./codesearch.js";
 import * as discover from "./discover.js";
 import * as atf from "./atf.js";
-import * as nl from "./nl.js";
 import * as script from "./script.js";
 
 export interface ToolModule {
@@ -59,7 +58,6 @@ export const tools: ToolModule[] = [
   codesearch,
   discover,
   atf,
-  nl,
   script,
 ];
 

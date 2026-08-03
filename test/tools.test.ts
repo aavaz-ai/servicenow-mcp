@@ -7,8 +7,8 @@ import { getToolDefinitions } from "../src/tools/index";
 describe("tool definitions", () => {
   const defs = getToolDefinitions();
 
-  it("exposes all 17 tools", () => {
-    expect(defs.length).toBe(17);
+  it("exposes all 16 tools", () => {
+    expect(defs.length).toBe(16);
   });
 
   it("every name is snake_case with no legacy sn_ prefix", () => {

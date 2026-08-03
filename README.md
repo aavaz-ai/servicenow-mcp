@@ -3,7 +3,7 @@
 <!-- Logo placeholder -->
 <!-- ![ServiceNow MCP Server](banner.png) -->
 
-**The most comprehensive ServiceNow MCP server.** 17 tools for full CRUD, CMDB graph traversal, background scripts, ATF testing, and more.
+**The most comprehensive ServiceNow MCP server.** 16 tools for full CRUD, CMDB graph traversal, background scripts, ATF testing, and more.
 
 Built by [OnlyFlows](https://onlyflows.tech) · Published by [@onlyflowstech](https://github.com/onlyflowstech)
 
@@ -32,9 +32,8 @@ Most ServiceNow MCP integrations are **read-only** and support a handful of tabl
 | Code search across artifacts | ❌ | ✅ |
 | Table/app/plugin discovery | ❌ | ✅ |
 | ATF test execution | ❌ | ✅ |
-| Natural language interface | ❌ | ✅ |
 | Background scripts | ❌ | ✅ (with Playwright) |
-| **Total tools** | **1–3** | **17** |
+| **Total tools** | **1–3** | **16** |
 
 ---
 
@@ -158,7 +157,6 @@ Add to `.vscode/mcp.json`:
 | Tool | Description |
 |------|-------------|
 | `run_atf_tests` | Run ATF tests and suites, get results |
-| `natural_language_query` | Natural language → ServiceNow API calls |
 | `run_background_script` | Execute background scripts (requires Playwright) |
 
 ---
@@ -213,7 +211,6 @@ This server is designed for production use with multiple safety layers:
 - **Batch operations** run in dry-run mode by default — shows match count without making changes
 - **Bulk deletes** require both `confirm` and `force` flags
 - **Background scripts** require `confirm` for destructive keywords (`deleteRecord`, `deleteMultiple`, etc.)
-- **Natural language writes** require `execute: true` (reads execute immediately)
 
 ---
 
