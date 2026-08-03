@@ -128,38 +128,38 @@ Add to `.vscode/mcp.json`:
 
 | Tool | Description |
 |------|-------------|
-| `sn_query` | Query any table with encoded queries, field selection, pagination, sorting |
-| `sn_get` | Get a single record by sys_id |
-| `sn_create` | Create a new record on any table |
-| `sn_update` | Update an existing record (PATCH) |
-| `sn_delete` | Delete a record (requires `confirm: true`) |
-| `sn_batch` | Bulk update/delete with dry-run safety (requires `confirm: true` to execute) |
+| `query_records` | Query any table with encoded queries, field selection, pagination, sorting |
+| `get_record` | Get a single record by sys_id |
+| `create_record` | Create a new record on any table |
+| `update_record` | Update an existing record (PATCH) |
+| `delete_record` | Delete a record (requires `confirm: true`) |
+| `batch_operation` | Bulk update/delete with dry-run safety (requires `confirm: true` to execute) |
 
 ### Analytics & Schema
 
 | Tool | Description |
 |------|-------------|
-| `sn_aggregate` | COUNT, AVG, MIN, MAX, SUM with grouping |
-| `sn_schema` | Table field definitions, types, references |
-| `sn_health` | Instance version, cluster nodes, stuck jobs, key stats |
+| `aggregate_records` | COUNT, AVG, MIN, MAX, SUM with grouping |
+| `get_table_schema` | Table field definitions, types, references |
+| `get_instance_health` | Instance version, cluster nodes, stuck jobs, key stats |
 
 ### CMDB & Operations
 
 | Tool | Description |
 |------|-------------|
-| `sn_relationships` | CMDB CI graph traversal — upstream/downstream/both, configurable depth |
-| `sn_attach` | List, download, upload attachments |
-| `sn_syslog` | Query system logs with severity/source/time filters |
-| `sn_codesearch` | Search business rules, script includes, client scripts, etc. |
-| `sn_discover` | Discover tables, scoped apps, store apps, plugins |
+| `traverse_cmdb_relationships` | CMDB CI graph traversal — upstream/downstream/both, configurable depth |
+| `manage_attachments` | List, download, upload attachments |
+| `query_system_logs` | Query system logs with severity/source/time filters |
+| `search_code` | Search business rules, script includes, client scripts, etc. |
+| `discover_tables` | Discover tables, scoped apps, store apps, plugins |
 
 ### Testing & Automation
 
 | Tool | Description |
 |------|-------------|
-| `sn_atf` | Run ATF tests and suites, get results |
-| `sn_nl` | Natural language → ServiceNow API calls |
-| `sn_script` | Execute background scripts (requires Playwright) |
+| `run_atf_tests` | Run ATF tests and suites, get results |
+| `natural_language_query` | Natural language → ServiceNow API calls |
+| `run_background_script` | Execute background scripts (requires Playwright) |
 
 ---
 
@@ -250,7 +250,7 @@ npx @modelcontextprotocol/inspector node dist/index.js
 
 - [ ] **SSE transport** for remote hosting
 - [ ] **OAuth 2.0** authentication support
-- [ ] **sn_script** full implementation with Playwright (SNS-39)
+- [ ] **run_background_script** full implementation with Playwright (SNS-39)
 - [ ] **Streaming** for large result sets
 - [ ] **Caching** for schema and relationship lookups
 

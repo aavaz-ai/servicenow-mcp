@@ -28,6 +28,7 @@ import * as script from "./script.js";
 export interface ToolModule {
   definition: {
     name: string;
+    title?: string;
     description: string;
     inputSchema: Record<string, unknown>;
   };

@@ -4,7 +4,8 @@ import { ServiceNowConfig } from "../config.js";
 import { ok, err } from "../utils.js";
 
 export const definition = {
-  name: "sn_script",
+  name: "run_background_script",
+  title: "Run background script",
   description:
     "Execute a background script on the ServiceNow instance. Runs server-side GlideRecord/GlideSystem JavaScript and returns output from gs.print() calls. Requires admin role. NOTE: This tool requires the optional Playwright dependency.",
   inputSchema: {
@@ -47,7 +48,7 @@ export async function handler(
   return ok({
     status: "unavailable",
     message:
-      "sn_script requires the optional Playwright dependency for browser-based script execution.\n\n" +
+      "run_background_script requires the optional Playwright dependency for browser-based script execution.\n\n" +
       "ServiceNow does not expose a REST API for background scripts — execution requires\n" +
       "automating the sys.scripts.do page via a headless browser.\n\n" +
       "To enable this tool, install Playwright:\n" +

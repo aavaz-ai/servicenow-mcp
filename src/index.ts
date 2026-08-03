@@ -57,7 +57,7 @@ async function main() {
 
   // Log to stderr (stdout is reserved for MCP protocol)
   console.error(
-    `@onlyflows/servicenow-mcp v1.0.0 started — ${config.instance} (${getToolDefinitions().length} tools)`
+    `@enterpret/servicenow-mcp started — ${config.instance} (${getToolDefinitions().length} tools)`
   );
 }
 

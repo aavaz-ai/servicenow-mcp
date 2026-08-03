@@ -6,7 +6,8 @@ import * as fs from "fs";
 import * as path from "path";
 
 export const definition = {
-  name: "sn_attach",
+  name: "manage_attachments",
+  title: "Manage attachments",
   description:
     "Manage attachments on ServiceNow records. List, download, or upload attachments.",
   inputSchema: {

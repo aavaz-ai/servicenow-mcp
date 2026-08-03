@@ -4,7 +4,8 @@ import { ServiceNowConfig } from "../config.js";
 import { ok, err, formatError, buildTableParams } from "../utils.js";
 
 export const definition = {
-  name: "sn_nl",
+  name: "natural_language_query",
+  title: "Natural language query",
   description:
     "Natural language interface for ServiceNow. Translates plain English into ServiceNow API calls. Supports queries, aggregates, schema lookups, creates, updates, and batch operations. Read operations execute immediately; write operations require execute=true.",
   inputSchema: {
@@ -338,7 +339,7 @@ export async function handler(
         result.payload = updatePayload;
         result.executed = false;
         result.message =
-          "Update requires a sys_id. Use sn_query to find the record, then sn_update to modify it.";
+          "Update requires a sys_id. Use query_records to find the record, then update_record to modify it.";
         break;
       }
 
@@ -347,7 +348,7 @@ export async function handler(
         let batchFields: Record<string, string> | undefined;
         if (batchAction === "update") {
           if (/\bclose\b/.test(lower))
-            batchFields = { state: "7", close_code: "Solved (Permanently)", close_notes: "Bulk closed via sn_nl" };
+            batchFields = { state: "7", close_code: "Solved (Permanently)", close_notes: "Bulk closed via natural_language_query" };
           else if (/\bresolve\b/.test(lower))
             batchFields = { state: "6" };
         }
@@ -403,7 +404,7 @@ export async function handler(
       case "DELETE": {
         result.executed = false;
         result.message =
-          "Delete requires a specific sys_id. Use sn_query to find the record, then sn_delete to remove it.";
+          "Delete requires a specific sys_id. Use query_records to find the record, then delete_record to remove it.";
         break;
       }
     }

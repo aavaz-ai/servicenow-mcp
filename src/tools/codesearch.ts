@@ -4,7 +4,8 @@ import { ServiceNowConfig } from "../config.js";
 import { ok, err, formatError, truncate } from "../utils.js";
 
 export const definition = {
-  name: "sn_codesearch",
+  name: "search_code",
+  title: "Search code",
   description:
     "Search across ServiceNow code artifacts — business rules, script includes, UI scripts, client scripts, and scripted REST operations. Returns matching records with code snippets.",
   inputSchema: {

@@ -4,7 +4,8 @@ import { ServiceNowConfig } from "../config.js";
 import { ok, err, formatError } from "../utils.js";
 
 export const definition = {
-  name: "sn_aggregate",
+  name: "aggregate_records",
+  title: "Aggregate records",
   description:
     "Run aggregate queries (COUNT, AVG, MIN, MAX, SUM) on a ServiceNow table with optional grouping.",
   inputSchema: {

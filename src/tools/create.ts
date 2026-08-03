@@ -4,7 +4,8 @@ import { ServiceNowConfig } from "../config.js";
 import { ok, err, formatError } from "../utils.js";
 
 export const definition = {
-  name: "sn_create",
+  name: "create_record",
+  title: "Create record",
   description:
     "Create a new record on any ServiceNow table. Pass field values as a JSON object.",
   inputSchema: {

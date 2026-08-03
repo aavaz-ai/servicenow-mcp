@@ -4,7 +4,8 @@ import { ServiceNowConfig } from "../config.js";
 import { ok, err, formatError, truncate } from "../utils.js";
 
 export const definition = {
-  name: "sn_syslog",
+  name: "query_system_logs",
+  title: "Query system logs",
   description:
     "Query ServiceNow system logs (syslog table) with severity, source, and time-based filters. Results ordered newest first.",
   inputSchema: {
