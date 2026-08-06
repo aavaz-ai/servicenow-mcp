@@ -1,6 +1,6 @@
 {
   "name": "@enterpret/servicenow-mcp",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Enterpret's fork of onlyflowstech/servicenow-mcp. 17 tools over the ServiceNow Table API; adds a SERVICENOW_OAUTH_BEARER env mode so a broker-supplied (Nango) OAuth token is used for auth.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
