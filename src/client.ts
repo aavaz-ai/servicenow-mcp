@@ -34,18 +34,30 @@ export class ServiceNowClient {
     return this.request("GET", url);
   }
 
-  async post(path: string, body?: unknown): Promise<any> {
-    const url = this.buildUrl(path);
+  async post(
+    path: string,
+    body?: unknown,
+    params?: Record<string, string>
+  ): Promise<any> {
+    const url = this.buildUrl(path, params);
     return this.request("POST", url, body);
   }
 
-  async patch(path: string, body?: unknown): Promise<any> {
-    const url = this.buildUrl(path);
+  async patch(
+    path: string,
+    body?: unknown,
+    params?: Record<string, string>
+  ): Promise<any> {
+    const url = this.buildUrl(path, params);
     return this.request("PATCH", url, body);
   }
 
-  async put(path: string, body?: unknown): Promise<any> {
-    const url = this.buildUrl(path);
+  async put(
+    path: string,
+    body?: unknown,
+    params?: Record<string, string>
+  ): Promise<any> {
+    const url = this.buildUrl(path, params);
     return this.request("PUT", url, body);
   }
 
